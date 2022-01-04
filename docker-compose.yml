@@ -4,7 +4,10 @@ services:
   mosquitto:
     container_name: smart_mqtt
     image: eclipse-mosquitto
+    restart: always
     volumes:
-      - ./:/mosquitto/:rw
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
     ports:
       - 9810:1883
