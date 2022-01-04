@@ -1,0 +1,15 @@
+name: Data store service
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'server/data-store/**'
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v2

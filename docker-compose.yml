@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mosquitto:
+    container_name: smart_mqtt
+    image: eclipse-mosquitto
+    volumes:
+      - ./:/mosquitto/:rw
+    ports:
+      - 9810:1883
