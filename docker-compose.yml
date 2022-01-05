@@ -2,9 +2,23 @@ version: '3'
 
 services:
   data-store:
-    container_name: data_store
+    container_name: smart_datastore
     build: server/data-store/
     restart: always
+    links:
+      - postgres
+  postgres:
+    container_name: smart_pg
+    build: db/
+    restart: always
+    ports: 
+      - "9811:5432"
+    volumes:
+      - ./data:/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_DB: SmartHome
   mosquitto:
     container_name: smart_mqtt
     image: eclipse-mosquitto
