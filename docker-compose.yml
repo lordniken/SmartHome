@@ -1,6 +1,10 @@
 version: '3'
 
 services:
+  data-store:
+    container_name: data_store
+    build: server/data-store/
+    restart: always
   mosquitto:
     container_name: smart_mqtt
     image: eclipse-mosquitto
