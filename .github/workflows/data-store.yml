@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Cloning repo
         uses: actions/checkout@v2
+      - name: Creating environment
+        run: |
+          touch server/data-store/.env
       - name: Building
         run: |
-          docker-compose -f ./docker-compose.yml up -d --build smart_datastore
+          docker-compose -f ./docker-compose.yml up -d --build data-store
