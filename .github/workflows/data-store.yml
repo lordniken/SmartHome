@@ -13,3 +13,6 @@ jobs:
     steps:
       - name: Cloning repo
         uses: actions/checkout@v2
+      - name: Building
+        run: |
+          docker-compose -f ./docker-compose.yml up -d --build smart_datastore
