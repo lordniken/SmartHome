@@ -14,4 +14,4 @@ COPY --from=build /app/package.json /app/package.json
 COPY --from=build /app/yarn.lock /app/yarn.lock
 COPY --from=build /app/.env /app/.env
 RUN yarn --production
-CMD ["node", "/app/src/server.js"]
+CMD ["node", "/app/main.js"]

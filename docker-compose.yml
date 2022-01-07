@@ -21,7 +21,7 @@ services:
       POSTGRES_DB: SmartHome
   mosquitto:
     container_name: smart_mqtt
-    image: eclipse-mosquitto
+    build: mosquitto/
     restart: always
     volumes:
       - ./mosquitto/config:/mosquitto/config
